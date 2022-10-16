@@ -1,0 +1,24 @@
+{% extends "layouts/wizard.html" %}
+{% set title = "Will your design history be public?" %}
+
+{% block form %}
+  {{ govukRadios({
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l",
+        text: title
+      }
+    },
+    items: [
+      {
+        text: "Yes, anyone with the link can read it (recommended)",
+        value: "Public"
+      },
+      {
+        text: "No, it will be password protected",
+        value: "Private"
+      }
+    ],
+    decorate: 'new.visibility'
+  }) }}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layouts/wizard.html" %}
+{% set title = "Pick a design history style" %}
+
+{% block form %}
+  {% set html %}
+    {{ govukInput({
+      label: {
+        text: 'Header colour',
+        classes: "govuk-label--s"
+      },
+      hint: {
+        html: 'A hex colour, for example: <code>#000000</code>'
+      },
+      decorate: 'new.colour'
+    }) }}
+  {% endset %}
+
+  {{ govukRadios({
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l",
+        text: title
+      }
+    },
+    items: [
+      {
+        text: "UK Government"
+      },
+      {
+        text: "UK Healthcare"
+      },
+      {
+        divider: 'or'
+      },
+      {
+        text: "Choose your own brand colours",
+        value: "custom",
+        conditional: {
+          html: html
+        }
+      }
+    ],
+    decorate: 'new.style'
+  }) }}
+{% endblock %}

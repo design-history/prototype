@@ -1,7 +1,7 @@
 import express from 'express'
-import { exampleWizardRoutes } from './routes/example-wizard.js'
+import { newDesignHistoryRoutes } from './routes/new-design-history.js'
 
 const router = express.Router()
-exampleWizardRoutes(router)
+newDesignHistoryRoutes(router)
 
 export default router

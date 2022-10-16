@@ -1,0 +1,22 @@
+{% extends "layouts/wizard.html" %}
+{% set title = "What will show on your design history homepage?" %}
+
+{% block form %}
+  {{ govukRadios({
+    fieldset: {
+      legend: {
+        classes: "govuk-fieldset__legend--l",
+        text: title
+      }
+    },
+    items: [
+      {
+        text: "A list of posts, ordered by date"
+      },
+      {
+        text: "A list of sections"
+      }
+    ],
+    decorate: 'new.type'
+  }) }}
+{% endblock %}

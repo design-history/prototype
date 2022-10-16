@@ -1,8 +1,6 @@
-# GOV.UK Prototype Rig template
+# Design history prototype
 
-A template prototype, built using the [GOV.UK Prototype Rig](https://govuk-prototype-rig.herokuapp.com).
-
-Use this repository as a template.
+A prototype, built using the [GOV.UK Prototype Rig](https://govuk-prototype-rig.herokuapp.com).
 
 ## Requirements
 

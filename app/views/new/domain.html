@@ -1,0 +1,17 @@
+{% extends "layouts/wizard.html" %}
+{% set title = "Pick a domain name" %}
+
+{% block form %}
+  {{ govukInput({
+    label: {
+      text: title,
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    classes: 'govuk-input--width-10',
+    decorate: 'new.domain',
+    suffix: {
+      text: ".thedesignhistory.com"
+    }
+  }) }}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layouts/wizard.html" %}
+{% set title = "Check your answers before confirming" %}
+
+{% block form %}
+  <h1 class="govuk-heading-xl">{{ title }}</h1>
+  {{ govukSummaryList({
+    classes: "govuk-!-margin-bottom-9",
+    rows: decorateRows([
+      {
+        key: 'Name',
+        data: 'new.name',
+        href: '/new/name'
+      },
+      {
+        key: 'Domain',
+        value: {
+          html: '<span class="govuk-!-font-size-16">' + d('new.domain') + '.thedesignhistory.com</span>'
+        },
+        href: '/new/domain'
+      },
+      {
+        key: 'Style',
+        data: 'new.style',
+        href: '/new/style'
+      } if d('new.style') !== 'custom',
+      {
+        key: 'Header colour',
+        data: 'new.colour',
+        href: '/new/style'
+      } if d('new.style') == 'custom',
+      {
+        key: 'Homepage',
+        data: 'new.type',
+        href: '/new/type'
+      },
+      {
+        key: 'Visibility',
+        data: 'new.visibility',
+        href: '/new/private'
+      }
+    ])
+  }) }}
+{% endblock %}

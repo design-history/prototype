@@ -1,0 +1,16 @@
+{% extends "layouts/wizard.html" %}
+{% set title = "Design history name" %}
+
+{% block form %}
+  {{ govukInput({
+    label: {
+      text: title,
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      html: '<p>This is usually your service or website name. It could also be a team or programme name.</p>'
+    },
+    decorate: 'new.name'
+  }) }}
+{% endblock %}
