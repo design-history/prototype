@@ -1,0 +1,39 @@
+// GOV.UK Frontend options
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+$govuk-assets-path: "/govuk/assets/";
+
+// Import GOV.UK Frontend
+@import "govuk-frontend/govuk/all";
+
+// Import GOV.UK Markdown styles
+@import "govuk-markdown/x-govuk/all";
+
+// Import GOV.UK Prototype Components
+@import "govuk-prototype-components/x-govuk/all";
+
+// Email styles
+@import "email.scss";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+@import "govuk-page-masthead";
+@import "components/button";
+@import "components/hidden-link";
+
+// Additional style helpers
+
+.app-\!-inherit-colour {
+  color: inherit !important;
+}
+
+.app-\!-font-family-tabular {
+  @include govuk-font($size: false, $tabular: true);
+}
+
+.app-\!-font-family-tabular-bold {
+  @include govuk-font($size: false, $tabular: true, $weight: bold);
+}
+
+.app-\!-no-wrap {
+  white-space: nowrap !important;
+}

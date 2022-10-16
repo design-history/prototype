@@ -1,0 +1,146 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Check answers page" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [{
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "name",
+              href: "#"
+            }]
+          }
+        }, {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "5 January 1978"
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "date of birth",
+              href: "#"
+            }]
+          }
+        }, {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: "72 Guild Street\nLondon\nSE23 6FH" | nl2br
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "address",
+              href: "#"
+            }]
+          }
+        }, {
+          key: {
+            text: "Contact details"
+          },
+          value: {
+            html: "07700 900457\nsarah.phillips@example.com" | nl2br
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "contact details",
+              href: "#"
+            }]
+          }
+        }]
+      }) }}
+
+      <h2 class="govuk-heading-m">Application details</h2>
+      {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-9",
+        rows: [{
+          key: {
+            text: "Previous application number"
+          },
+          value: {
+            text: "502135326"
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "previous application number",
+              href: "#"
+            }]
+          }
+        }, {
+          key: {
+            text: "Licence type"
+          },
+          value: {
+            text: "For personal use"
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "licence type",
+              href: "#"
+            }]
+          }
+        }, {
+          key: {
+            text: "Home address"
+          },
+          value: {
+            html: "72 Guild Street\nLondon\nSE23 6FH" | nl2br
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "home address",
+              href: "#"
+            }]
+          }
+        }, {
+          key: {
+            text: "Licence period"
+          },
+          value: {
+            text: "Valid for 6 months"
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "licence period",
+              href: "#"
+            }]
+          }
+        }]
+      }) }}
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
