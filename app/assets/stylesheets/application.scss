@@ -3,6 +3,9 @@ $govuk-global-styles: true;
 $govuk-new-link-styles: true;
 $govuk-assets-path: "/govuk/assets/";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+$govuk-font-family: "Inter", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
 // Import GOV.UK Frontend
 @import "govuk-frontend/govuk/all";
 
