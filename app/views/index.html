@@ -9,7 +9,7 @@
     containerClasses: "govuk-width-container"
   }) }}
 
-  <div class="app-masthead">
+  <div class="app-masthead app-masthead--purple">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -32,6 +32,7 @@
       <p>Journeys for a design history service.</p>
 
       {{ govukButton({
+        classes: 'app-button',
         text: 'Start now',
         href: '#',
         isStartButton: true

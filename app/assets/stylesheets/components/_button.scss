@@ -1,8 +1,29 @@
+// Temporary until govuk-frontend 4.4 is released
+// https://github.com/alphagov/govuk-frontend/pull/2752
+$app-button-colour: #663399;
+$app-button-hover-colour: govuk-shade($app-button-colour, 20%);
+$app-button-shadow-colour: govuk-shade($app-button-colour, 60%);
+
+.app-button {
+  background-color: $app-button-colour;
+  box-shadow: 0 $govuk-border-width-form-element 0 $app-button-shadow-colour;
+}
+
+.app-button:hover {
+  background-color: $app-button-hover-colour;
+}
+
+// Inverse button
+
 $app-button-shadow-size: $govuk-border-width-form-element;
 $app-button-inverse-background-colour: govuk-colour("white");
 $app-button-inverse-foreground-colour: $govuk-brand-colour;
 $app-button-inverse-shadow-colour: govuk-shade($app-button-inverse-foreground-colour, 30%);
 $app-button-inverse-hover-background-colour: govuk-tint($app-button-inverse-foreground-colour, 90%);
+
+.app-button {
+
+}
 
 .app-button--inverse,
 .app-button--inverse:link,

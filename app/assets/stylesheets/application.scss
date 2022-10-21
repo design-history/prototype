@@ -21,10 +21,16 @@ $govuk-font-family: "Inter", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvet
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "govuk-page-masthead";
 @import "components/button";
+@import "components/footer";
 @import "components/header";
 @import "components/hidden-link";
+@import "components/masthead";
 
 // Additional style helpers
+
+.govuk-template {
+  background-color: govuk-colour('white');
+}
 
 .app-\!-inherit-colour {
   color: inherit !important;
