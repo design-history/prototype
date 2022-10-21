@@ -1,4 +1,5 @@
 {% extends "template.njk" %}
+{% from "components/footer/macro.njk" import appFooter %}
 {% from "components/header/macro.njk" import appHeader %}
 
 {% block head %}
@@ -34,7 +35,10 @@
 {% endblock %}
 
 {% block footer %}
-  {{ govukFooter({
+  {{ appFooter({
+    contentLicence: {
+      text: "© Design History 2022"
+    },
     meta: {
       items: [{
         text: "Clear session data",
