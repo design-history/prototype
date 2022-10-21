@@ -1,3 +1,8 @@
 .app-masthead--purple {
-  background-color: #663399;
+  h1,
+  p {
+    color: govuk-colour('black') !important;
+  }
+
+  background-color: $app-masthead-colour;
 }

@@ -1,4 +1,4 @@
 .app-footer {
-  background-color: govuk-colour('white');
-  border-width: 10px;
+  background-color: govuk-tint($app-masthead-colour, 50%);
+  border-width: 0;
 }

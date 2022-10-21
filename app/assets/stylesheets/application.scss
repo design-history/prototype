@@ -2,6 +2,12 @@
 $govuk-global-styles: true;
 $govuk-new-link-styles: true;
 $govuk-assets-path: "/govuk/assets/";
+$app-button-colour: #288080;
+$app-brand-colour: #c1dede;
+$app-masthead-colour: #c1dede;
+
+// Potential colours:
+// yellow – #ffd70a
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 $govuk-font-family: "Inter", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
@@ -29,7 +35,7 @@ $govuk-font-family: "Inter", "HelveticaNeue", "Helvetica Neue", "Arial", "Helvet
 // Additional style helpers
 
 .govuk-template {
-  background-color: govuk-colour('white');
+  background-color: govuk-tint($app-masthead-colour, 50%);
 }
 
 .app-\!-inherit-colour {
