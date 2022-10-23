@@ -18,12 +18,15 @@
           </h1>
           <p class="govuk-body-l">Document and share design decisions. Create a record of how your service has developed over time.</p>
 
-          {{ govukButton({
-            classes: 'app-button govuk-!-margin-bottom-6',
-            text: 'Start now',
-            href: '#',
-            isStartButton: true
-          }) }}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              classes: 'app-button govuk-!-margin-bottom-6',
+              text: 'Start now',
+              href: '/new-user/email',
+              isStartButton: true
+            }) }}
+            <p>or <a href="#" class="app-!-inherit-colour govuk-!-margin-left-2 govuk-!-font-weight-bold">Sign in</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -46,8 +49,8 @@
       </p>
 
       <h2 class="govuk-heading-m">Why you should keep a design history</h2>
-      <p>As services age, as they’re iterated, built and rebuilt, and team members come and go, institutional memory fades and questions about why a service is the way it is become hard to answer. Context gets lost, research disappears and the design becomes opaque.</p>
       <p>Keeping a design history makes it easy to know why a service is the way it is.</p>
+      <p>As services age, as they’re iterated, built and rebuilt, and team members come and go, institutional memory fades and questions about why a service is the way it is become hard to answer. Context gets lost, research disappears and the design becomes opaque.</p>
 
       <h2 class="govuk-heading-m">Examples</h2>
 

@@ -1,0 +1,37 @@
+{% extends "layouts/default.html" %}
+{% set title %}Your design histories{% endset %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+        <a href="/design-history">Register as a juggler</a>
+      </h2>
+      <p class="govuk-!-font-size-16">Admin</p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+        <a href="#">Register as an astrologer</a>
+      </h2>
+      <p class="govuk-!-font-size-16">Writer</p>
+
+      <div class="govuk-!-margin-top-6">
+        {{ govukButton({
+          classes: "app-button",
+          text: "New design history",
+          href: "/new/name"
+        }) }}
+      </div>
+
+      <!-- <h2 class="govuk-heading-m">Your teams</h2>
+      <p>Invite others to contribute to your design history</p>
+
+      {{ govukButton({
+        classes: "govuk-button--secondary",
+        text: "Create a team",
+        href: "/new/name"
+      }) }} -->
+    </div>
+  </div>
+{% endblock %}

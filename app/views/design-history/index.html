@@ -1,0 +1,48 @@
+{% extends "layouts/default.html" %}
+{% set title %}Register as a juggler{% endset %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-display-none-print",
+    items: [
+      {
+        text: 'Your design histories',
+        href: '/dashboard'
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">{{ title }}</h1>
+      <p class="govuk-!-margin-bottom-6">
+        <a href="#">register-juggler.thedesignhistory.com</a> – <a href="#">Change details</a>
+      </p>
+
+      {{ govukButton({
+        classes: "app-button",
+        text: "New post",
+        href: "#"
+      }) }}
+
+      <h2 class="govuk-heading-m">Drafts</h2>
+      <ul class="govuk-list">
+        <li><a href="#">Untitled</a></li>
+        <li><a href="#">How users will sign in</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Published</h2>
+      <ul class="govuk-list">
+        <li>
+          10 Nov 2022<br ><a href="#">Why we need this service</a>
+        </li>
+        <li class="govuk-!-margin-top-4">
+          2 Jun 2022<br ><a href="#">How users will sign in</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+{% endblock %}

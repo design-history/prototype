@@ -2,7 +2,7 @@ import { wizard } from 'govuk-prototype-rig'
 
 export function newDesignHistoryWizard (req) {
   const journey = {
-    '/new': {},
+    '/dashboard': {},
     '/new/name': {},
     '/new/domain': {},
     '/new/style': {},
