@@ -1,0 +1,183 @@
+{% extends "layouts/default.html" %}
+{% set postTitle = "How we chose our service name" %}
+
+{% set title %}{{ postTitle or 'New post' }}{% endset %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-display-none-print",
+    items: [
+      {
+        text: 'Your design histories',
+        href: '/dashboard'
+      },
+      {
+        text: 'Register as a juggler',
+        href: '/design-history'
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        <span class="govuk-caption-xl">Draft post</span>
+        {{ title | noOrphans | safe }}
+      </h1>
+      <!-- <p class="govuk-!-font-size-16 govuk-hint">/how-we-chose-our-service-name</p> -->
+      <p class="govuk-!-font-size-16 govuk-hint">Automatically saved: Today at 1:03pm</p>
+    </div>
+  </div>
+
+  {% set writeHtml %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        {{ govukInput({
+          label: {
+            text: "Title",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            html: '<span class="govuk-!-font-size-16">Good titles describe the post, do not use ‘User research’ or ‘MVP’</span>'
+          },
+          value: postTitle,
+          decorate: "post.title"
+        }) }}
+
+        {{ govukTextarea({
+          label: {
+            text: "Post",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            html: '<span class="govuk-!-font-size-16">Use <a href="#">markdown</a> for links, headings and images</span>'
+          },
+          decorate: "post.post",
+          rows: 30
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-third-from-desktop">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Images</h2>
+        <p class="govuk-!-font-size-16 govuk-hint">Shown at the bottom of a post</p>
+        <!-- <div class="app-upload-screenshots app-upload-screenshots--empty">
+          <p class="app-upload-screenshots-message">Drag and drop<br />images to upload</p>
+        </div> -->
+        <div class="app-upload-screenshots">
+          <ul class="govuk-list">
+            {% for i in range(0, 10) %}
+              <li>
+                <p class="govuk-!-font-size-14 govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                  Home page
+                </p>
+                <div class="app-image-buttons govuk-button-group">
+                  <a href="#" class="app-image-button app-image-button--up govuk-button govuk-!-font-weight-bold govuk-button--secondary">↑</a>
+                  <a href="#" class="app-image-button app-image-button--down govuk-button govuk-!-font-weight-bold govuk-button--secondary">↓</a>
+                  <a href="#" class="app-image-button app-image-button--delete govuk-button govuk-!-font-weight-bold govuk-button--secondary">×</a>
+                </div>
+                <a href="#">
+                  <img class="govuk-!-margin-bottom-2" src="https://user-images.githubusercontent.com/319055/141861075-304aae2b-9935-4161-9b3b-145520196ec2.png" />
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {% endset %}
+
+  {% set imagesHtml %}
+  <div class="app-images-tab">
+    <ul class="govuk-list">
+      {% for i in range(0, 10) %}
+        <li class="app-images-tab-item">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <div class="app-images-tab-image-container">
+                <a href="#">
+                  <img class="govuk-!-margin-bottom-2" src="https://user-images.githubusercontent.com/319055/141861075-304aae2b-9935-4161-9b3b-145520196ec2.png" />
+                </a>
+
+                <div class="app-image-buttons govuk-button-group">
+                  <a href="#" class="app-image-button app-image-button--up govuk-button govuk-!-font-weight-bold govuk-button--secondary">↑</a>
+                  <a href="#" class="app-image-button app-image-button--down govuk-button govuk-!-font-weight-bold govuk-button--secondary">↓</a>
+                  <a href="#" class="app-image-button app-image-button--delete govuk-button govuk-!-font-weight-bold govuk-button--secondary">×</a>
+                </div>
+              </div>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+              {{ govukInput({
+                label: {
+                  text: "Title"
+                },
+                value: "Home page",
+                decorate: "post.image-full." + i
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Alt text"
+                },
+                value: "Home page",
+                decorate: "post.image-alt." + i
+              }) }}
+
+              {{ govukTextarea({
+                label: {
+                  text: "Caption"
+                },
+                hint: {
+                  text: "Optional. You can use markdown.",
+                  classes: "govuk-!-font-size-16"
+                },
+                decorate: "post.caption." + i
+              }) }}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endset %}
+
+  {{ govukTabs({
+    items: [
+      {
+        label: "Write",
+        id: "write",
+        panel: {
+          html: writeHtml
+        }
+      },
+      {
+        label: "Preview",
+        id: "preview",
+        panel: {
+          html: previewHtml
+        }
+      },
+      {
+        label: "Images",
+        id: "images",
+        panel: {
+          html: imagesHtml
+        }
+      }
+    ]
+  }) }}
+
+  <div>
+    {{ govukButton({
+      text: 'Save draft',
+      classes: 'govuk-button--secondary'
+    }) }}
+  </div>
+
+  <div>
+    {{ govukButton({
+      text: 'Preview and publish',
+      classes: 'app-button'
+    }) }}
+  </div>
+{% endblock %}

@@ -1,0 +1,81 @@
+.app-upload-screenshots {
+  border: 2px dashed $app-button-colour;
+  min-height: 500px;
+  max-height: 1000px;
+  overflow-y: scroll;
+  background-color: govuk-tint($app-brand-colour, 80%);
+  padding: 20px;
+  position: relative;
+
+  img {
+    max-width: 100%;
+    border: 1px solid #000;
+  }
+}
+
+.app-images-tab {
+  li {
+    position: relative;
+  }
+
+  img {
+    max-width: 100%;
+    border: 1px solid #000;
+  }
+}
+
+.app-images-tab-image-container {
+  margin-bottom: govuk-spacing(8);
+  position: relative;
+
+  .app-image-buttons {
+    top: 1px;
+    right: 12px;
+  }
+
+  img {
+    border-width: 2px;
+  }
+}
+
+.govuk-list li.app-images-tab-item {
+  margin-bottom: govuk-spacing(6);
+  padding-bottom: govuk-spacing(6);
+  border-bottom: 1px solid $govuk-border-colour;
+}
+
+.app-upload-screenshots--empty {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.app-upload-screenshots-message {
+  padding: govuk-spacing(6) govuk-spacing(4);
+  @include govuk-font(16);
+}
+
+.app-image-buttons {
+  position: absolute;
+  right: 33px;
+  background: #000;
+  border: 1px solid #000;
+}
+
+li:only-child .app-image-button--up,
+li:first-child .app-image-button--up {
+  display: none;
+}
+
+li:only-child .app-image-button--down,
+li:last-child .app-image-button--down {
+  display: none;
+}
+
+.app-image-button.govuk-button {
+  margin-right: 2px;
+  margin-bottom: 2px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
