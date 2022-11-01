@@ -5,14 +5,14 @@ export const newDesignHistoryRoutes = router => {
    * Example routes to demonstrate using wizard helper.
    */
   router.all([
-    '/new',
-    '/new/:view'
+    '/admin/new',
+    '/admin/new/:view'
   ], (req, res, next) => {
     res.locals.paths = newDesignHistoryWizard(req)
     next()
   })
 
-  router.post('/new/:view', (req, res) => {
+  router.post('/admin/new/:view', (req, res) => {
     res.redirect(res.locals.paths.next)
   })
 }

@@ -2,13 +2,13 @@ import { wizard } from 'govuk-prototype-rig'
 
 export function newDesignHistoryWizard (req) {
   const journey = {
-    '/dashboard': {},
-    '/new/name': {},
-    '/new/domain': {},
-    '/new/style': {},
-    '/new/type': {},
-    '/new/private': {},
-    '/new/check-answers': {}
+    '/admin/dashboard': {},
+    '/admin/new/name': {},
+    '/admin/new/domain': {},
+    '/admin/new/style': {},
+    '/admin/new/type': {},
+    '/admin/new/private': {},
+    '/admin/new/check-answers': {}
   }
 
   return wizard(journey, req)

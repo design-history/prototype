@@ -9,34 +9,34 @@
       {
         key: 'Name',
         data: 'new.name',
-        href: '/new/name'
+        href: '/admin/new/name'
       },
       {
         key: 'Domain',
         value: {
           html: '<span class="govuk-!-font-size-16">' + d('new.domain') + '.desighhistory.app</span>'
         },
-        href: '/new/domain'
+        href: '/admin/new/domain'
       },
       {
         key: 'Style',
         data: 'new.style',
-        href: '/new/style'
+        href: '/admin/new/style'
       } if d('new.style') !== 'custom',
       {
         key: 'Header colour',
         data: 'new.colour',
-        href: '/new/style'
+        href: '/admin/new/style'
       } if d('new.style') == 'custom',
       {
         key: 'Homepage',
         data: 'new.type',
-        href: '/new/type'
+        href: '/admin/new/type'
       },
       {
         key: 'Visibility',
         data: 'new.visibility',
-        href: '/new/private'
+        href: '/admin/new/private'
       }
     ])
   }) }}
