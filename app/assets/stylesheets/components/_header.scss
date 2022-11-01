@@ -1,7 +1,19 @@
-.app-header {
+.app-header--design-history {
+  .govuk-header__logo {
+    width: auto;
+    margin-top: govuk-spacing(5);
+    margin-bottom: govuk-spacing(5);
+  }
+
+  .govuk-header__container {
+    border-bottom-color: $app-button-colour;
+  }
+}
+
+.app-header--admin {
   padding-top: 40px;
   padding-bottom: 10px;
-  border-bottom: 10px solid $app-button-colour;
+  // border-bottom: 10px solid $app-button-colour;
 
   .govuk-header__container {
     border-bottom-width: 0;

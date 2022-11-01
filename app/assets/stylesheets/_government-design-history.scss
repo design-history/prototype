@@ -1,0 +1,11 @@
+.app-design-history--government {
+  background-color: govuk-colour("light-grey") !important;
+
+  .app-header--design-history .govuk-header__container {
+    border-color: $govuk-brand-colour;
+  }
+
+  .app-footer {
+    background: govuk-colour("light-grey");
+  }
+}

@@ -1,35 +1,3 @@
-{% extends "layouts/default.html" %}
-{% set title = "Register as a juggler design history" %}
-{% block pageTitle %}{{ title }}{% endblock %}
-
-{% block header %}
-  {{ appDesignHistoryHeader({
-    designHistoryName: "Register as a juggler",
-    homepageUrl: "/",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-
-  <div class="app-masthead app-masthead--teal">
-    <div class="govuk-width-container">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds-from-desktop">
-          <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-6">
-            {{ title }}
-          </h1>
-          <p class="govuk-body-l">
-            How the design of the Register as a juggler service has&nbsp;changed
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-{% endblock %}
-
-{% block beforeContent %}
-{% endblock %}
-
-{% block content %}
 <div class="govuk-grid-row">
   <section class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">Posts</h2>
@@ -93,4 +61,3 @@
     </ol>
   </section>
 </div>
-{% endblock %}
