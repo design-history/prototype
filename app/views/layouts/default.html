@@ -1,6 +1,7 @@
 {% extends "template.njk" %}
 {% from "components/footer/macro.njk" import appFooter %}
-{% from "components/header/macro.njk" import appHeader %}
+{% from "components/admin-header/macro.njk" import appAdminHeader %}
+{% from "components/desigh-history-header/macro.njk" import appDesignHistoryHeader %}
 
 {% block headIcons %}
 {% endblock %}
@@ -19,7 +20,7 @@
 {% set bodyAttributes = {"data-module": "edge"} %}
 
 {% block header %}
-  {{ appHeader({
+  {{ appAdminHeader({
     homepageUrl: "/",
     organisationName: "Design History",
     containerClasses: "govuk-width-container"
