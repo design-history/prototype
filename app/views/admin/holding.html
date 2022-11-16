@@ -1,0 +1,103 @@
+{% extends "layouts/default.html" %}
+{% block pageTitle %}Design history prototype{% endblock %}
+
+{% block header %}
+  {{ appAdminHeader({
+    organisationName: "Design History",
+    homepageUrl: "/",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+
+  <div class="app-masthead app-masthead--teal">
+    <div class="govuk-width-container">
+      <h1 class="govuk-!-font-size-80 app-masthead__title govuk-heading-xl govuk-!-margin-bottom-7">
+        Introducing design histories
+      </h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <ul class="govuk-list govuk-body-l">
+            <li>Keep a design history</li>
+            <li>Document and share design decisions</li>
+            <li>Create a record of how designs have changed</li>
+          </ul>
+        </div>
+      </div>
+
+      <img src="/public/images/all-screenshot.png" class="app-holding-screenshot" />
+    </div>
+  </div>
+
+  <div class="govuk-width-container govuk-!-margin-top-8">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h2 class="govuk-heading-l">Make your design history</h2>
+        <p>What you get:</p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a <b>designhistory.app</b> domain</li>
+              <li>a blog tailored to sharing designs</li>
+              <li>a fully hosted service</li>
+              <li>public or private histories</li>
+              <li>government and healthcare themes</li>
+              <li>easy to use for your whole team</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-waitlist-container">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <h2 class="govuk-heading-l govuk-!-margin-top-6">Join the waitlist</h2>
+
+          <p>We’ll keep you updated.<br />Start your design history soon.</p>
+
+          {{ govukInput({
+            label: {
+              text: "Email address",
+              classes: "govuk-label--s"
+            },
+            classes: "govuk-input--width-20",
+            decorate: 'email-address-sign-up',
+            validate: {
+              presence: {
+                message: "Enter your email address"
+              },
+              email: {
+                message: "Enter an email address in the correct format, like name@example.com"
+              }
+            }
+          }) }}
+
+          {{ govukButton({
+            classes: 'app-button govuk-!-margin-bottom-2 govuk-!-font-weight-bold',
+            text: 'Join list',
+            href: '#'
+          }) }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h2 class="govuk-heading-m">What a design history is</h2>
+      <p>A design history is like a blog. It features posts that describe the development of new features, iterations of existing ones, or findings from user research. It will contain anything that may be useful to return to later.</p>
+      <p>Over time, a design history becomes a record of your designs. It tells the story of what you designed and why.</p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Why you should keep a design history</h2>
+      <p>Keeping a design history makes it easy to know why a service is the way it is.</p>
+      <p>As services age, as they’re iterated, built and rebuilt, and team members come and go, institutional memory fades and questions about why a service is the way it is become hard to answer. Context gets lost, research disappears and the design becomes opaque.</p>
+    </div>
+  </div>
+{% endblock %}
