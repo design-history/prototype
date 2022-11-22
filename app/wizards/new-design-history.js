@@ -6,7 +6,6 @@ export function newDesignHistoryWizard (req) {
     '/admin/new/name': {},
     '/admin/new/domain': {},
     '/admin/new/style': {},
-    '/admin/new/type': {},
     '/admin/new/private': {},
     '/admin/new/check-answers': {}
   }
