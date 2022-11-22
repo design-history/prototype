@@ -15,34 +15,81 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">{{ title }}</h1>
-      <p class="govuk-!-margin-bottom-6">
-        <a href="#">register-juggler.desighhistory.app</a> – <a href="#">Change details</a>
-      </p>
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
 
-      {{ govukButton({
-        classes: "app-button",
-        text: "New post",
-        href: "/admin/design-history/new"
+      {{ xGovukSummaryCard({
+        titleHtml: '<span class="govuk-heading-m govuk-!-margin-bottom-0">Design history</span>',
+        actions: {
+          items: [{
+            text: "Change",
+            href: "#"
+          }]
+        },
+        rows: decorateRows([
+          {
+            key: 'Name',
+            value: 'Register a juggler'
+          },
+          {
+            key: 'Domain',
+            value: {
+              html: '<a href="#">register-juggler.designhistory.app</a>'
+            }
+          },
+          {
+            key: 'Style',
+            value: 'UK Government'
+          },
+          {
+            key: 'Visibility',
+            value: 'Public'
+          }
+        ])
       }) }}
 
-      <h2 class="govuk-heading-m">Drafts</h2>
-      <ul class="govuk-list">
-        <li><a href="#">Untitled</a></li>
-        <li><a href="#">How users will sign in</a></li>
-      </ul>
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-6">Published</h2>
-      <ul class="govuk-list">
-        <li>
-          10 Nov 2022<br ><a href="#">Why we need this service</a>
-        </li>
-        <li class="govuk-!-margin-top-4">
-          2 Jun 2022<br ><a href="#">How users will sign in</a>
-        </li>
-      </ul>
-
+      <div class="x-govuk-summary-card govuk-!-margin-top-6">
+        <header class="x-govuk-summary-card__header">
+          <h2 class="x-govuk-summary-card__title">
+            <span class="govuk-heading-m govuk-!-margin-bottom-0">Posts</span>
+          </h2>
+          <div class="x-govuk-summary-card__actions">
+            <a href="/admin/design-history/new">New post</a>
+          </div>
+        </header>
+        <div class="x-govuk-summary-card__body">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header">Title</th>
+                <th class="govuk-table__header">Status</th>
+                <th class="govuk-table__header">Date</th>
+                <th class="govuk-table__header">Action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Scope for MVP</a></td>
+                <td class="govuk-table__cell">{{ govukTag({ text: 'Draft', classes: 'govuk-tag--grey' })}}</td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Why we need this service</a></td>
+                <td class="govuk-table__cell">{{ govukTag({ text: 'Published', classes: 'govuk-tag--turquoise' })}}</td>
+                <td class="govuk-table__cell">10 Nov 2022</td>
+                <td class="govuk-table__cell"><a href="#">View published post</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">How users will sign in</a></td>
+                <td class="govuk-table__cell">{{ govukTag({ text: 'Published', classes: 'govuk-tag--turquoise' })}}</td>
+                <td class="govuk-table__cell">2 Nov 2022</td>
+                <td class="govuk-table__cell"><a href="#">View published post</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 {% endblock %}

@@ -33,14 +33,14 @@
 
   {% set writeHtml %}
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds-from-desktop">
+      <div class="govuk-grid-column-full">
         {{ govukInput({
           label: {
             text: "Title",
-            classes: "govuk-label--s"
+            classes: "govuk-label--m"
           },
           hint: {
-            html: '<span class="govuk-!-font-size-16">Good titles describe the post, do not use ‘User research’ or ‘MVP’</span>'
+            html: 'Good titles describe the post, do not use ‘User research’ or ‘MVP’'
           },
           value: postTitle,
           decorate: "post.title"
@@ -49,46 +49,23 @@
         {{ govukTextarea({
           label: {
             text: "Post",
-            classes: "govuk-label--s"
+            classes: "govuk-label--m"
           },
           hint: {
-            html: '<span class="govuk-!-font-size-16">Use <a href="#">markdown</a> for links, headings and images</span>'
+            html: 'Use <a href="#">markdown</a> for links and headings. Drag and drop images.'
           },
           decorate: "post.post",
           rows: 30
         }) }}
-      </div>
-      <div class="govuk-grid-column-one-third-from-desktop">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Images</h2>
-        <p class="govuk-!-font-size-16 govuk-hint">Shown at the bottom of a post</p>
-        <!-- <div class="app-upload-screenshots app-upload-screenshots--empty">
-          <p class="app-upload-screenshots-message">Drag and drop<br />images to upload</p>
-        </div> -->
-        <div class="app-upload-screenshots">
-          <ul class="govuk-list">
-            {% for i in range(0, 10) %}
-              <li>
-                <p class="govuk-!-font-size-14 govuk-!-font-weight-bold govuk-!-margin-bottom-2">
-                  Home page
-                </p>
-                <div class="app-image-buttons govuk-button-group">
-                  <a href="#" class="app-image-button app-image-button--up govuk-button govuk-!-font-weight-bold govuk-button--secondary">↑</a>
-                  <a href="#" class="app-image-button app-image-button--down govuk-button govuk-!-font-weight-bold govuk-button--secondary">↓</a>
-                  <a href="#" class="app-image-button app-image-button--delete govuk-button govuk-!-font-weight-bold govuk-button--secondary">×</a>
-                </div>
-                <a href="#">
-                  <img class="govuk-!-margin-bottom-2" src="https://user-images.githubusercontent.com/319055/141861075-304aae2b-9935-4161-9b3b-145520196ec2.png" />
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
       </div>
     </div>
   {% endset %}
 
   {% set imagesHtml %}
   <div class="app-images-tab">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Screenshots</h2>
+    <p class="govuk-!-margin-bottom-6">Show a list of images at the bottom of your post.</p>
+
     <ul class="govuk-list">
       {% for i in range(0, 10) %}
         <li class="app-images-tab-item">
@@ -151,17 +128,24 @@
         }
       },
       {
+        label: "Screenshots",
+        id: "images",
+        panel: {
+          html: imagesHtml
+        }
+      },
+      {
+        label: "Related",
+        id: "related",
+        panel: {
+          html: relatedHtml
+        }
+      },
+      {
         label: "Preview",
         id: "preview",
         panel: {
           html: previewHtml
-        }
-      },
-      {
-        label: "Images",
-        id: "images",
-        panel: {
-          html: imagesHtml
         }
       }
     ]
